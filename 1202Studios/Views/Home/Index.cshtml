@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Index";
+    ViewBag.Home = "active";
+}
+
+<div id="home">
+    <div class="story">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"> 
+                </div>
+                <div class="span10"> 
+                    <h1>
+                        1202 Studios
+                        <span class="rnd">{1202}</span>
+                    </h1>
+                    <div class="row-fluid">
+                        <div class="span5">
+                            <h2>Affordable and professional web &amp; graphics design</h2>
+										<p>"from a basic web presence right up to a full-blown e-commerce shopping experience Studio 1202 can develop an individually tailored site at a surprisingly attractive cost"</p>
+                            <p>
+                            @Html.ActionLink("View details »", "Services", "", new { @class = "btn" })
+                            </p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+</div>

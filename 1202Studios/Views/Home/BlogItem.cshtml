@@ -1,0 +1,31 @@
+﻿@model _1202Studios.Blog
+
+@{
+    ViewBag.Title = "BlogItem";
+    ViewBag.Blog = "active";
+}
+
+<div id="blog">
+    <div class="story">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"> </div>
+                <div class="span9">
+                    <h1>Blog<span class="rnd">{1202}</span></h1>
+                    <h3>Our thoughts on technology</h3>
+                    <div class="row-fluid">
+                        <div class="span1"> </div>
+                        <div class="span8"> 
+                            <div class="blogItem">
+                                <h4>@Model.Title</h4>
+                                <p>@Model.Text</p>
+                                @Html.ActionLink("Back", "Blog", null, new {@class = "btn"})
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

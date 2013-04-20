@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />    
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js" type="text/javascript">
+    <script src="../../Scripts/jquery-ui-1.9.2.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic">
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid"> 
+                    <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar"> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a href="/" class="brand">1202 Studios</a>
+                    <div class="nav-collapse collapse" style="height: 0px;">
+                        <ul class="nav" id="navi">
+                            <li class="@ViewBag.Home">@Html.ActionLink("Home", "Index")</li>
+                            <li class="@ViewBag.AboutUs">@Html.ActionLink("About", "AboutUs")</li>
+                            <li class="@ViewBag.Services">@Html.ActionLink("Services", "Services")</li>
+                            <li class="@ViewBag.Portfolio">@Html.ActionLink("Portfolio", "Portfolio")</li>
+                            <li class="@ViewBag.Blog">@Html.ActionLink("Blog", "Blog")</li>
+                            <li class="@ViewBag.Contact">@Html.ActionLink("Contact", "Contact")</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+
+    <footer class="footer"> 
+	<div class="row">
+	<div class="span2"><a href="" class="btn btn-inverse"><i class="icon-bookmark"></i>Bookmark</a> </div> <!-- sample button -->
+    <div class="span3"><p></p></div>
+    </div>
+</footer>
+</body>
+</html>

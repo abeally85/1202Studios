@@ -1,0 +1,62 @@
+﻿@model List<_1202Studios.IPortfolio>
+@{
+    ViewBag.Title = "Portfolio";
+    ViewBag.Portfolio = "active";
+}
+
+
+<div id="portfolio">
+	<div class="container-fluid">
+		<div class="story">
+			<div class="row-fluid">
+				<h1>Portfolio <span class="rnd">{1202}</span></h1>
+				<p style="margin-bottom: 37px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nibh erat, sagittis sit amet congue at, aliquam eu libero. Integer molestie, turpis vel ultrices facilisis, nisi mauris sollicitudin mauris, volutpat elementum enim urna eget odio. Donec egestas aliquet facilisis. Nunc eu nunc eget neque ornare fringilla. Nam vel sodales lectus. Nulla in pellentesque eros. Donec ultricies, enim vitae varius cursus, risus mauris iaculis neque, euismod sollicitudin metus erat vitae sapien. Sed pulvinar.</p>
+			</div>
+            <div class="row">
+                @for (int i = 0; i * 3 < Model.Count; i++)
+                {     
+                    <div class="span1"></div>     
+                    <ul class="thumbnails">                    
+                        @foreach (var item in Model.Skip(3 * i).Take(3))
+                        {
+                            <li class="span3">
+                                @if (item.GetType().Name == "Project")
+                                {
+                                    var project = (_1202Studios.Project)item;
+                                    <a class="thumbnail" href="#@item.Id" role="button" data-toggle="modal">
+						                <img src="../../Content/images/Project/@project.ImageUrl" alt="website"/>
+                                    </a>
+                                    <div id="@item.Id" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h3 id="myModalLabel">@item.Title</h3>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>@item.Summary</p>
+                                            <div class="center"><img src="../../Content/images/Project/@project.ImageUrl" alt="website"/></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                            <a href="@project.WebsiteUrl" role="button" class="btn btn-primary">View Website</a>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                { 
+                                    <div class="quotes thumbnail">
+							            <div class="quote">
+								            “@item.Summary”
+							            </div>
+							            <div class="quoter">
+								            - @item.Title - 
+							            </div>			
+						            </div>
+                                }
+                            </li>
+                        }
+                    </ul>
+                }
+			</div>
+		</div>
+	</div>
+</div>
